@@ -169,7 +169,65 @@
             </div>
 
         </section>
+<!-- ================= SAVE MODE ================= -->
 
+<section class="save-mode" id="saveMode">
+
+    <div class="section-heading">
+        <p>SAVE MODE</p>
+
+        <h2>
+            Build your <span>saving plan.</span>
+        </h2>
+
+        <p class="save-intro">
+            Enter your monthly numbers and FINWISE will calculate
+            how much you may be able to save.
+        </p>
+    </div>
+
+    <div class="save-container">
+
+        <div class="save-form">
+
+            <label>Monthly Income (₹)</label>
+            <input type="number" id="income" placeholder="e.g. 50000">
+
+            <label>Monthly Expenses (₹)</label>
+            <input type="number" id="expenses" placeholder="e.g. 30000">
+
+            <label>Current Savings (₹)</label>
+            <input type="number" id="currentSavings" placeholder="e.g. 20000">
+
+            <label>Monthly Saving Goal (₹)</label>
+            <input type="number" id="savingGoal" placeholder="e.g. 10000">
+
+            <button onclick="calculateSavings()">
+                Calculate My Plan →
+            </button>
+
+        </div>
+
+
+        <div class="save-result">
+
+            <p>YOUR SAVING POTENTIAL</p>
+
+            <h2 id="savingAmount">₹ 0</h2>
+
+            <span>Estimated amount available after expenses</span>
+
+            <div class="result-line"></div>
+
+            <p id="savingMessage">
+                Enter your details to see your result.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
     </main>
 
 
