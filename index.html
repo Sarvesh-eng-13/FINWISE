@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +12,28 @@
 
 <body>
 
+    <!-- ================= HEADER ================= -->
+
     <header>
+
         <div class="logo">
             FIN<span>WISE</span>
         </div>
 
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Save</a>
-            <a href="#">Invest</a>
-            <a href="#">Goals</a>
+            <a href="#home">Home</a>
+            <a href="#modes">Modes</a>
+            <a href="#results">Results</a>
         </nav>
+
     </header>
 
 
     <main>
 
-        <section class="hero">
+        <!-- ================= HERO ================= -->
+
+        <section class="hero" id="home">
 
             <div class="hero-text">
 
@@ -39,9 +45,9 @@
                 </h1>
 
                 <p class="description">
-                    FINWISE helps you understand your money,
-                    plan your savings, explore investment options,
-                    and work toward your financial goals.
+                    FINWISE is a financial decision-support system that
+                    helps you understand saving, investment categories,
+                    financial goals and overall financial health.
                 </p>
 
                 <button onclick="startPlanning()">
@@ -53,11 +59,11 @@
 
             <div class="hero-card">
 
-                <p>YOUR FINANCIAL SNAPSHOT</p>
+                <p>FINWISE ANALYSIS</p>
 
-                <h2>₹ 50,000</h2>
+                <h2>4 Modes</h2>
 
-                <span>Available Balance</span>
+                <span>One place for smarter financial planning</span>
 
                 <div class="money-bar">
                     <div></div>
@@ -66,18 +72,18 @@
                 <div class="mini-stats">
 
                     <div>
-                        <strong>₹30K</strong>
-                        <small>Saved</small>
+                        <strong>Save</strong>
+                        <small>Plan</small>
                     </div>
 
                     <div>
-                        <strong>₹15K</strong>
-                        <small>Invested</small>
+                        <strong>Invest</strong>
+                        <small>Explore</small>
                     </div>
 
                     <div>
-                        <strong>₹5K</strong>
-                        <small>Goals</small>
+                        <strong>Goals</strong>
+                        <small>Achieve</small>
                     </div>
 
                 </div>
@@ -86,6 +92,8 @@
 
         </section>
 
+
+        <!-- ================= MODES ================= -->
 
         <section class="modes" id="modes">
 
@@ -103,63 +111,72 @@
 
             <div class="mode-grid">
 
-                <div class="mode-card" onclick="selectMode('save')">
 
-                    <div class="icon"></div>
+                <!-- SAVE -->
+
+                <div class="mode-card" onclick="showMode('save')">
+
+                    <div class="icon">💰</div>
 
                     <h3>Save</h3>
 
                     <p>
-                        Plan how much you can save
-                        from your income and expenses.
+                        Calculate your monthly saving capacity
+                        from income and expenses.
                     </p>
 
-                    <span>Explore →</span>
+                    <span>Analyze →</span>
 
                 </div>
 
 
-                <div class="mode-card" onclick="selectMode('invest')">
+                <!-- INVEST -->
 
-                    <div class="icon"></div>
+                <div class="mode-card" onclick="showMode('invest')">
+
+                    <div class="icon">📈</div>
 
                     <h3>Invest</h3>
 
                     <p>
-                        Understand investment categories
-                        based on your goals and risk comfort.
+                        Explore investment categories using
+                        your goal, time horizon and risk comfort.
                     </p>
 
-                    <span>Explore →</span>
+                    <span>Analyze →</span>
 
                 </div>
 
 
-                <div class="mode-card" onclick="selectMode('goal')">
+                <!-- GOALS -->
 
-                    <div class="icon"></div>
+                <div class="mode-card" onclick="showMode('goal')">
+
+                    <div class="icon">🎯</div>
 
                     <h3>Goals</h3>
 
                     <p>
-                        Plan how much you need to save
-                        to reach an important financial goal.
+                        Find the monthly contribution needed
+                        to reach your financial target.
                     </p>
 
-                    <span>Explore →</span>
+                    <span>Plan →</span>
 
                 </div>
 
 
-                <div class="mode-card" onclick="selectMode('health')">
+                <!-- HEALTH -->
 
-                    <div class="icon"></div>
+                <div class="mode-card" onclick="showMode('health')">
+
+                    <div class="icon">🧠</div>
 
                     <h3>Financial Health</h3>
 
                     <p>
-                        Get a simple overview of your
-                        saving, spending and financial habits.
+                        Analyze savings, expenses, debt and
+                        emergency funds with a simple score.
                     </p>
 
                     <span>Check →</span>
@@ -169,72 +186,532 @@
             </div>
 
         </section>
-<!-- ================= SAVE MODE ================= -->
-
-<section class="save-mode" id="saveMode">
-
-    <div class="section-heading">
-        <p>SAVE MODE</p>
-
-        <h2>
-            Build your <span>saving plan.</span>
-        </h2>
-
-        <p class="save-intro">
-            Enter your monthly numbers and FINWISE will calculate
-            how much you may be able to save.
-        </p>
-    </div>
-
-    <div class="save-container">
-
-        <div class="save-form">
-
-            <label>Monthly Income (₹)</label>
-            <input type="number" id="income" placeholder="e.g. 50000">
-
-            <label>Monthly Expenses (₹)</label>
-            <input type="number" id="expenses" placeholder="e.g. 30000">
-
-            <label>Current Savings (₹)</label>
-            <input type="number" id="currentSavings" placeholder="e.g. 20000">
-
-            <label>Monthly Saving Goal (₹)</label>
-            <input type="number" id="savingGoal" placeholder="e.g. 10000">
-
-            <button onclick="calculateSavings()">
-                Calculate My Plan →
-            </button>
-
-        </div>
 
 
-        <div class="save-result">
+        <!-- ================= ANALYSIS AREA ================= -->
 
-            <p>YOUR SAVING POTENTIAL</p>
+        <section class="analysis-section" id="analysis">
 
-            <h2 id="savingAmount">₹ 0</h2>
+            <div class="section-heading">
 
-            <span>Estimated amount available after expenses</span>
+                <p>FINWISE ANALYSIS ENGINE</p>
 
-            <div class="result-line"></div>
+                <h2>
+                    Enter your information and
+                    <span>get your result.</span>
+                </h2>
 
-            <p id="savingMessage">
-                Enter your details to see your result.
-            </p>
+            </div>
 
-        </div>
 
-    </div>
+            <!-- ================= SAVE FORM ================= -->
 
-</section>
+            <div class="analysis-box" id="saveBox">
+
+                <div class="analysis-title">
+
+                    <span class="big-icon">💰</span>
+
+                    <div>
+                        <h2>Save Planner</h2>
+
+                        <p>
+                            Understand your monthly saving capacity.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+
+                        <label>Monthly Income (₹)</label>
+
+                        <input
+                            type="number"
+                            id="income"
+                            placeholder="e.g. 50000">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Monthly Expenses (₹)</label>
+
+                        <input
+                            type="number"
+                            id="expenses"
+                            placeholder="e.g. 30000">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Current Savings (₹)</label>
+
+                        <input
+                            type="number"
+                            id="currentSavings"
+                            placeholder="e.g. 20000">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Monthly Saving Goal (₹)</label>
+
+                        <input
+                            type="number"
+                            id="savingGoal"
+                            placeholder="e.g. 10000">
+
+                    </div>
+
+                </div>
+
+
+                <button onclick="calculateSavings()">
+                    Calculate Saving Plan →
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= INVEST FORM ================= -->
+
+            <div class="analysis-box hidden" id="investBox">
+
+                <div class="analysis-title">
+
+                    <span class="big-icon">📈</span>
+
+                    <div>
+                        <h2>Investment Explorer</h2>
+
+                        <p>
+                            Compare investment categories based on
+                            time horizon and risk comfort.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+
+                        <label>Amount Available to Invest (₹)</label>
+
+                        <input
+                            type="number"
+                            id="investAmount"
+                            placeholder="e.g. 20000">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Time Horizon</label>
+
+                        <select id="horizon">
+
+                            <option value="">Select horizon</option>
+
+                            <option value="short">
+                                Short Term (0–3 years)
+                            </option>
+
+                            <option value="medium">
+                                Medium Term (3–7 years)
+                            </option>
+
+                            <option value="long">
+                                Long Term (7+ years)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Risk Comfort</label>
+
+                        <select id="risk">
+
+                            <option value="">Select risk level</option>
+
+                            <option value="conservative">
+                                Conservative
+                            </option>
+
+                            <option value="moderate">
+                                Moderate
+                            </option>
+
+                            <option value="aggressive">
+                                Aggressive
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Objective</label>
+
+                        <select id="objective">
+
+                            <option value="">Select objective</option>
+
+                            <option value="capital">
+                                Capital Preservation
+                            </option>
+
+                            <option value="growth">
+                                Long-term Growth
+                            </option>
+
+                            <option value="balanced">
+                                Balanced Approach
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button onclick="analyzeInvestment()">
+                    Analyze Investment Categories →
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= GOAL FORM ================= -->
+
+            <div class="analysis-box hidden" id="goalBox">
+
+                <div class="analysis-title">
+
+                    <span class="big-icon">🎯</span>
+
+                    <div>
+                        <h2>Goal Planner</h2>
+
+                        <p>
+                            Calculate the monthly amount needed
+                            to reach your target.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+
+                        <label>Goal Name</label>
+
+                        <input
+                            type="text"
+                            id="goalName"
+                            placeholder="e.g. Laptop">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Target Amount (₹)</label>
+
+                        <input
+                            type="number"
+                            id="targetAmount"
+                            placeholder="e.g. 60000">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Current Amount (₹)</label>
+
+                        <input
+                            type="number"
+                            id="goalCurrent"
+                            placeholder="e.g. 10000">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Time Available (months)</label>
+
+                        <input
+                            type="number"
+                            id="goalMonths"
+                            placeholder="e.g. 12">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Current Monthly Contribution (₹)</label>
+
+                        <input
+                            type="number"
+                            id="goalContribution"
+                            placeholder="e.g. 4000">
+
+                    </div>
+
+                </div>
+
+
+                <button onclick="calculateGoal()">
+                    Calculate Goal Plan →
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= HEALTH FORM ================= -->
+
+            <div class="analysis-box hidden" id="healthBox">
+
+                <div class="analysis-title">
+
+                    <span class="big-icon">🧠</span>
+
+                    <div>
+                        <h2>Financial Health Check</h2>
+
+                        <p>
+                            Get a simple score based on your
+                            financial habits and buffers.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+
+                        <label>Monthly Income (₹)</label>
+
+                        <input
+                            type="number"
+                            id="healthIncome"
+                            placeholder="e.g. 50000">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Monthly Expenses (₹)</label>
+
+                        <input
+                            type="number"
+                            id="healthExpenses"
+                            placeholder="e.g. 30000">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Monthly Debt Payments (₹)</label>
+
+                        <input
+                            type="number"
+                            id="debt"
+                            placeholder="e.g. 5000">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Emergency Fund (₹)</label>
+
+                        <input
+                            type="number"
+                            id="emergencyFund"
+                            placeholder="e.g. 60000">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Investments (₹)</label>
+
+                        <input
+                            type="number"
+                            id="investments"
+                            placeholder="e.g. 50000">
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Current Savings (₹)</label>
+
+                        <input
+                            type="number"
+                            id="healthSavings"
+                            placeholder="e.g. 20000">
+
+                    </div>
+
+                </div>
+
+
+                <button onclick="calculateHealth()">
+                    Check Financial Health →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= RESULTS ================= -->
+
+        <section class="results-section hidden" id="results">
+
+            <div class="section-heading">
+
+                <p>FINWISE RESULT</p>
+
+                <h2>
+                    Your financial
+                    <span>analysis.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <div class="result-header">
+
+                    <div>
+
+                        <p id="resultMode">
+                            ANALYSIS RESULT
+                        </p>
+
+                        <h2 id="resultTitle">
+                            Your Result
+                        </h2>
+
+                    </div>
+
+                    <div class="score-circle">
+
+                        <strong id="resultScore">
+                            --
+                        </strong>
+
+                        <span id="scoreLabel">
+                            RESULT
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="result-grid">
+
+                    <div class="result-stat">
+
+                        <span>Primary Result</span>
+
+                        <strong id="resultPrimary">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-stat">
+
+                        <span>Progress / Rate</span>
+
+                        <strong id="resultSecondary">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-stat">
+
+                        <span>Status</span>
+
+                        <strong id="resultStatus">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="recommendation">
+
+                    <p>FINWISE INSIGHT</p>
+
+                    <h3 id="resultRecommendation">
+                        Complete an analysis to receive your result.
+                    </h3>
+
+                </div>
+
+
+                <button onclick="newAnalysis()">
+                    Start New Analysis
+                </button>
+
+            </div>
+
+        </section>
+
     </main>
 
+
+    <!-- ================= FOOTER ================= -->
 
     <footer>
 
         <p>
-            FINWISE © 2026 | Financial education & decision support
+            FINWISE © 2026 | Financial Education & Decision Support
         </p>
 
     </footer>
@@ -243,4 +720,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
