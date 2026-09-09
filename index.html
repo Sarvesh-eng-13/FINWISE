@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>FINWISE | Smart Financial Decisions</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            FIN<span>WISE</span>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Save</a>
+            <a href="#">Invest</a>
+            <a href="#">Goals</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <p class="tagline">YOUR MONEY. YOUR DECISIONS.</p>
+
+                <h1>
+                    Make smarter
+                    <span>financial decisions.</span>
+                </h1>
+
+                <p class="description">
+                    FINWISE helps you understand your money,
+                    plan your savings, explore investment options,
+                    and work toward your financial goals.
+                </p>
+
+                <button onclick="startPlanning()">
+                    Start Planning →
+                </button>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <p>YOUR FINANCIAL SNAPSHOT</p>
+
+                <h2>₹ 50,000</h2>
+
+                <span>Available Balance</span>
+
+                <div class="money-bar">
+                    <div></div>
+                </div>
+
+                <div class="mini-stats">
+
+                    <div>
+                        <strong>₹30K</strong>
+                        <small>Saved</small>
+                    </div>
+
+                    <div>
+                        <strong>₹15K</strong>
+                        <small>Invested</small>
+                    </div>
+
+                    <div>
+                        <strong>₹5K</strong>
+                        <small>Goals</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="modes" id="modes">
+
+            <div class="section-heading">
+
+                <p>CHOOSE YOUR MODE</p>
+
+                <h2>
+                    What do you want to
+                    <span>do with your money?</span>
+                </h2>
+
+            </div>
+
+
+            <div class="mode-grid">
+
+                <div class="mode-card" onclick="selectMode('save')">
+
+                    <div class="icon"></div>
+
+                    <h3>Save</h3>
+
+                    <p>
+                        Plan how much you can save
+                        from your income and expenses.
+                    </p>
+
+                    <span>Explore →</span>
+
+                </div>
+
+
+                <div class="mode-card" onclick="selectMode('invest')">
+
+                    <div class="icon"></div>
+
+                    <h3>Invest</h3>
+
+                    <p>
+                        Understand investment categories
+                        based on your goals and risk comfort.
+                    </p>
+
+                    <span>Explore →</span>
+
+                </div>
+
+
+                <div class="mode-card" onclick="selectMode('goal')">
+
+                    <div class="icon"></div>
+
+                    <h3>Goals</h3>
+
+                    <p>
+                        Plan how much you need to save
+                        to reach an important financial goal.
+                    </p>
+
+                    <span>Explore →</span>
+
+                </div>
+
+
+                <div class="mode-card" onclick="selectMode('health')">
+
+                    <div class="icon"></div>
+
+                    <h3>Financial Health</h3>
+
+                    <p>
+                        Get a simple overview of your
+                        saving, spending and financial habits.
+                    </p>
+
+                    <span>Check →</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            FINWISE © 2026 | Financial education & decision support
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
